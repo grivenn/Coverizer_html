@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<meta charset="UTF-8">
+	<title>Cover WorkShop</title>
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./css/Cover_StyleSheet.min.css">
+
+  <script src="./js/jquery-3.3.1.js"> </script>
+  <script src="./js/jquery.unobtrusive-ajax.js"></script>
+  <script src="./js/cover.js"></script>
+  <script src="./js/langs.js"></script>
+
+</head>
+<body>
+	<div id="container">
+
+
+		<div id="header">
+			<div id="title">
+				<p>Coverizer</p>
+			</div>
+			<div id="landiv">
+					<select class="input slc" id="lng">
+						<option selected value="0">English</option>						
+						<option value="1">Русский</option>						
+					</select> 
+			</div>			
+		</div>
+
+
+
+		<div id="tabs">
+			<div id="cov" class="tab">
+				<p class="tab-header" id="sCovC">Softcover</p>
+				<p class="tab-txt" id="sCovTxtC">Paperback</p>
+			</div>
+			<div id="hCov" class="tab sel">
+				<p class="tab-header" id="hCovC">Casebound</p>
+				<p class="tab-txt" id="hCovTxtC">Classic hardcover</p>
+			</div>
+			<div id="int" class="tab">
+				<p class="tab-header" id="intgC">Integral</p>
+				<p class="tab-txt" id="intgTxtC">Holand binding</p>
+			</div>
+			<div id="sos" class="tab">
+				<p class="tab-header" id="sostC">Casebound</p>
+				<p class="tab-txt" id="sostTxtC">With hinge cloth</p>
+			</div>
+			<input type="text" id="ct" hidden >
+		</div>
+
+
+<div id="center">
+	<div id = "centerLeft">
+		<div id="parameters">
+			<p class ="comments hCov int sos" id="trinC">TernIn</p>
+			<input type="text" class="input hCov int sos" id="trin" value="17">
+			<p class ="comments cov hCov int sos" id="sdLWC">Side Width</p>
+			<input type="text" class="input cov hCov int sos" id="sdLW" value="150">
+			<p class ="comments cov hCov int sos" id="sdLHC">Side Height</p>
+			<input type="text" class="input cov hCov int sos" id="sdLH" value="297">
+			<p class ="comments hCov sos" id="jntC">Joint</p>
+			<input type="text" class="input hCov sos" id="jnt" value="9">
+			<p class ="comments cov hCov int sos" id="spinC">Spine</p>
+			<input type="text" class="input cov hCov int sos" id="spin" value="15">
+			<p class ="comments sos" id="brdC">Board Cover</p>
+			<input type="text" class="input sos" id="brd" value="120">
+			<p class ="comments sos" id="qtrC">Spine Cover</p>
+			<input type="text" class="input sos" id="qtr" value="100">
+			<p class ="comments cov" id="flpC">Flaps</p>
+			<input type="text" class="input cov" id="flp" value="0">
+		</div>
+		
+			
+	</div>
+	
+
+
+		<div id="canvas">
+			<canvas id="mycanvas" width="660" height="420"></canvas>
+
+		</div>
+
+
+		<div class="btns">
+
+			<div id="btc">
+				<div class="sets">
+					<p class ="comments alws" id="bldC">Marks Offset</p>
+					<input type="text" class="input alws" id="bld" value="3">
+					<p class ="comments alws" id="mlen">Mark Length</p>
+					<input type="text" class="input alws" id="slg" value="2">
+				</div>
+				<div class="sets">
+					<p class ="comments alws" id="unitesC">Unites</p>	
+					<select class="input slc" id="unites">
+						<option value="0">mm</option>
+						<option value="1">inches</option>
+						<option value="2">points</option>
+						<option value="3">pixels</option>
+					</select> 
+					
+					<p class ="comments alws" id="sVerC">InDesign</p>
+					<select class="input slc" id="sVer">
+						<option value="0">default</option>
+						<option value="1">CS6</option>
+						<option value="2">CC</option>
+						<option value="3">CC 2014</option>
+						<option value="4">CC 2015</option>
+						<option value="5">CC 2017</option>
+						<option value="6">CC 2018</option>
+					</select> 
+					
+				</div>
+				<input id="hidSet" type="text" hidden>				
+			</div>
+
+			<div id="btl">
+				 <div id="chbs">
+				 	<div>					
+						<p class="chb">
+							<input type="checkbox" class="chbset hCov int sos" id="lws" checked />
+							<label for="lws" class="chb comments" id="lwsC"><span></span>Layer with scheme</label>
+						</p>
+						<p class="chb">
+							<input type="checkbox" class="chbset hCov int sos" id="pws" checked />
+							<label for="pws" class="chb comments" id="pwsC"><span></span>Page with scheme</label>
+						</p>
+					</div>
+				 	<div>
+					 	<p class="chb">
+						 	<input type="checkbox" class="chbset cov hCov int sos" id="gds" checked/>
+							<label for="gds" class="chb comments" id="gdsC"><span></span>Guides</label>
+						</p>
+
+						<p class="chb">
+							<input type="checkbox" class="chbset cov hCov int sos" id="spr" checked/>
+							<label for="spr" class="chb comments" id="sprC"><span></span>Use spreads</label>
+						</p>
+					</div>	
+				</div>
+			</div>
+
+			<div id="btr">
+				<div id="hidDiv">	
+					<input id="hidData" type="text" hidden>
+				</div>
+				
+				<input class="btn" type="submit" value="Save" onclick="beforsubmit()">
+		        <input class="btn" type="button" value="Cancel" id="cancel">
+	        </div>
+		</div>
+
+
+</div>
+		
+
+
+
+
+	</div>
+	
+</body>
+</html>
